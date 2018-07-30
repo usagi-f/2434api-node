@@ -1,14 +1,8 @@
 import * as Express from 'express'
+import controller from '../controllers/'
 
 const router = Express.Router()
 
-router.get('/', (req: Express.Request, res: Express.Response) => {
-  return res.send('Hello world.')
-})
-
-router.get('/:name', (req: Express.Request, res: Express.Response) => {
-  let { name } = req.params
-  return res.send(`Hello, ${name}`)
-})
+router.get('/', [controller.findAll])
 
 export default router
