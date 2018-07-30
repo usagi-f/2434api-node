@@ -1,17 +1,18 @@
 export type UserData = {
   id: number,
-  username: string,
-  email: string,
-  password: string,
-  firstName: string,
-  lastName: string,
+  group: '1st' | '2nd' | 'gamers' | 'seeds' | 'voiz',
+  name: string,
+  mother: string,
+  age: number,
+  height: number,
+  birthday: string,
+  twitter: string,
 }
 
 interface User {
   user: UserData,
   getId(): number,
-  getUsername(): string,
-  validPassword(password: string): boolean,
+  getName(): string,
   toObject(): UserData,
 }
 
@@ -22,11 +23,13 @@ export default class UserModel implements User {
   constructor(userData: UserData) {
     this.user = {
       id: userData.id,
-      username: userData.username,
-      email: userData.email,
-      password: userData.password,
-      firstName: userData.firstName,
-      lastName: userData.lastName,
+      group: userData.group,
+      name: userData.name,
+      mother: userData.mother,
+      age: userData.age,
+      height: userData.height,
+      birthday: userData.birthday,
+      twitter: userData.twitter,
     }
     return this
   }
@@ -35,12 +38,8 @@ export default class UserModel implements User {
     return this.user.id
   }
 
-  getUsername() {
-    return this.user.username
-  }
-
-  validPassword(password: string) {
-    return this.user.password === password
+  getName() {
+    return this.user.name
   }
 
   toObject() {

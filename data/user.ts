@@ -1,20 +1,26 @@
-const records = [
+import { UserData } from '../models/userModel'
+
+const records: Array<UserData> = [
   {
     id: 1,
-    username: 'farhad.yasir',
-    email: 'farhad.yasir@demo.com',
-    password: '123456',
-    firstName: 'Farhad',
-    lastName: 'Yasir',
+    group: '1st',
+    name: 'TsukinoMito',
+    mother: 'nezumidosi_',
+    age: 16,
+    height: 151,
+    birthday: '09-24',
+    twitter: 'mitotsukino',
   },
   {
     id: 2,
-    username: 'john.smith',
-    email: 'john.smith@demo.com',
-    password: '123456',
-    firstName: 'John',
-    lastName: 'Smith',
-  }
+    group: '1st',
+    name: 'YukiChihiro',
+    mother: 'cacao_0833',
+    age: 10,
+    height: 138,
+    birthday: '07-16',
+    twitter: 'Chihiro_yuki23',
+  },
 ]
 
 export default records
