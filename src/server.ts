@@ -1,12 +1,15 @@
 import * as Express from 'express'
-import route from '../routes/'
+import router from '../routes/'
+import config from '../config'
 
 const app = Express()
 
-app.use('/api', route)
+const endpoint: string = `${config.path}/${config.version}/`
 
-app.listen(3000, () => {
-  console.log('> Ready on http://localhost:3000')
+app.use(endpoint, router)
+
+app.listen(config.port, () => {
+  console.log(`> Ready on http://localhost:${config.port}`)
 })
 
 export default app
